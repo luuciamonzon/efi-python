@@ -1,0 +1,35 @@
+{% extends 'template_base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Crear un Nuevo Accesorio</h4>
+            <form action="{{ url_for('accesorio_bp.accesorios') }}" method="POST">  <!-- Asegúrate de que la ruta es correcta -->
+                <div class="mb-3">
+                    {{ formulario.nombre.label }}
+                    {{ formulario.nombre(class="form-control") }}
+                </div>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Listado de Accesorios</h4>
+            <ul class="list-group">
+                {% for accesorio in accesorios %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>{{ accesorio.nombre }}</span>
+                    <div>
+                        <a href="{{ url_for('accesorio_bp.accesorio_editar', id=accesorio.id) }}" class="btn btn-warning btn-sm me-2">Editar</a>
+                        <form action="{{ url_for('accesorio_bp.accesorio_eliminar', id=accesorio.id) }}" method="POST" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
