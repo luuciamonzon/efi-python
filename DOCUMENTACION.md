@@ -7,7 +7,7 @@ Todos los endpoints requieren que el usuario esté autenticado y tenga permisos 
 #### LOGIN : 
 
 
-##### METODO POST / AUTENTICACIÓN
+##### MÉTODO POST / AUTENTICACIÓN
 Endpoint : /login
 
 Cuerpo de la solicitud: 
@@ -27,9 +27,10 @@ Respuesta:
 #### USERS: 
 
 
-##### METODO POST 
+##### MÉTODO POST 
 
 Endpoint : /users
+
 Cuerpo de la solicitud: 
 ```json
     {
@@ -48,21 +49,23 @@ Respuesta:
 }
 ```
 Mensajes de error:
+
     `403 Forbidden`: Solo los administradores pueden crear usuarios.
     `500 Internal Server Error`: Fallo la creación del usuario.
  
 
-##### METODO GET
+##### MÉTODO GET
 
-Si el usuario autenticado es administrador, se devuelve la lista completa con detalles de cada usuario. Si el usuario no es administrador, se devuelve una versión mínima de los datos del usuario.
+Si el usuario autenticado es administrador, se devuelve la lista completa con detalles de cada usuario. Si el usuario no es administrador, se devuelve una versión minimalista de los datos del usuario.
 
-##### METODO DELETE
+##### MÉTODO DELETE
 
 Endpoint : /users/ID del usuario a eliminar/delete
+
 Respuesta:
 ```json
 {
-  200 OK: Usuario eliminado correctamente.
+  "200 OK": "Usuario eliminado correctamente."
 }
 ```
 Mensajes en caso de errores: 
@@ -70,20 +73,21 @@ Mensajes en caso de errores:
     `404 Not found`:Usuario no encontrado.
     `500 Internal Server Error`: Fallo al eliminar el usuario.
 
-##### METODO PUT 
+##### MÉTODO PUT 
 
 Endpoint : /users/ID del usuario a actualizar/update
+
 Cuerpo de la solicitud: 
 ```json
     {
     "username":"dato a actualizar, si se desea",
-    "password" "dato a actualizar, si se desea"
+    "password": "dato a actualizar, si se desea"
     }
 ```
 Respuesta:
 ```json
 {
-  200  OK: Usuario actualizado correctamente.
+  "200  OK": "Usuario actualizado correctamente."
 }
 ```
 Mensajes en caso de errores: 
@@ -95,10 +99,11 @@ Mensajes en caso de errores:
 #### MARCA: 
 
 
-##### METODO POST
+##### MÉTODO POST
 
 
 Endpoint : /marca
+
 Cuerpo de la solicitud: 
 ```json
     {
@@ -119,10 +124,11 @@ Mensajes en caso de errores:
  
 
 
-##### METODO GET 
+##### MÉTODO GET 
 
 
 Endpoint : /marca
+
 Respuesta: 
 ```json
 {
@@ -153,16 +159,17 @@ Respuesta:
 
 #### STOCK: 
 
-##### METODO POST: 
+##### MÉTODO POST: 
 
 
 Endpoint : /stock
 
 Endpoint : /eliminar_stock
+
 Respuesta:
 ```json
 {
-  200  OK: Stock restado correctamente.
+  "200  OK": "Stock restado correctamente."
 }
 ```
 
@@ -174,10 +181,11 @@ Mensajes en caso de error:
     `403 Forbidden`: No está autorizado para borrar stock.
     
 
-##### METODO GET: 
+##### MÉTODO GET: 
 
 
 Endpoint : /stock
+
 Respuesta:
 ```json
 [
@@ -199,9 +207,10 @@ Respuesta:
 
 #### ACCESORIOS: 
 
-##### METODO POST: 
+##### MÉTODO POST: 
 
 Endpoint : /accesorios
+
 Cuerpo de la solicitud: 
 ```json
     {
@@ -211,13 +220,13 @@ Cuerpo de la solicitud:
 Respuesta: 
 ```json
     {
-     201 Created: Accesorio creado exitosamente
+     "201 Created": "Accesorio creado exitosamente"
     }
 ```
 Mensajes en caso de errores:
 ```json 
 {
-    403 Forbidden: No está autorizado para crear accesorio.
+    "403 Forbidden": "No está autorizado para crear accesorio."
 }
 ```
 Endpoint : /accesorio/ID del accesorio a eliminar/eliminar
@@ -225,13 +234,13 @@ Endpoint : /accesorio/ID del accesorio a eliminar/eliminar
 Respuesta: 
 ```json
 {
-  200 OK:Accesorio eliminado exitosamente.
+  "200 OK":"Accesorio eliminado exitosamente."
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    403 Forbidden: No está autorizado para eliminar accesorio.
+    "403 Forbidden": "No está autorizado para eliminar accesorio."
 }
 ```
 Endpoint : /accesorio/ID del accesorio a editar/editar
@@ -239,18 +248,18 @@ Endpoint : /accesorio/ID del accesorio a editar/editar
 Respuesta: 
 ```json
 {
-  200 OK:Accesorio actualizado exitosamente.
+  "200 OK":"Accesorio actualizado exitosamente"
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    403 Forbidden: No está autorizado para editar accesorio.
+    "403 Forbidden": "No está autorizado para editar accesorio"
 }
 ```
 
 
-##### METODO GET: 
+##### MÉTODO GET: 
 
 Endpoint : /accesorios
 
@@ -276,7 +285,7 @@ Respuesta:
 #### TIPO: 
 
 
-##### METODO POST: 
+##### MÉTODO POST: 
 Endpoint : /tipo
 
 Cuerpo de la solicitud: 
@@ -307,8 +316,9 @@ Mensaje en caso de error:
     `404 Not Found`: Tipo no encontrado.
  
 
-##### METODO GET: 
+##### MÉTODO GET: 
 Endpoint : /tipo
+
 Respuesta: 
 ```json
 {
@@ -331,7 +341,7 @@ Respuesta:
 #### TELEFONO: 
 
 
-##### METODO POST: 
+##### MÉTODO POST: 
 
 
 Endpoint: /telefono
@@ -350,7 +360,7 @@ Cuerpo de la solicitud:
 Respuesta: 
 ```json
 {
-   200 OK: Teléfono creado exitosamente.
+   "200 OK": "Teléfono creado exitosamente."
 }
 ```
 
@@ -358,17 +368,17 @@ Endpoint: /telefono/ID del telefono a eliminar/eliminar
 Respuesta:
 ```json
 {
-  200 OK: Teléfono eliminado con éxito.
+  "200 OK": "Teléfono eliminado con éxito."
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    403 Forbidden: No está autorizado para eliminar teléfonos.
+    "403 Forbidden": "No está autorizado para eliminar teléfonos."
 }
 ```
 
-##### METODO GET: 
+##### MÉTODO GET: 
 
 
 Endpoint: /telefono
@@ -472,26 +482,26 @@ Respuesta:
 ```
 
 
-##### METODO DELETE: 
+##### MÉTODO DELETE: 
 Endpoint: /telefono/ID del telefono a eliminar
 
 Respuesta: 
 ```json
 {
-  200 OK: Teléfono eliminado con éxito.
+  "200 OK": "Teléfono eliminado con éxito."
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    403 Forbidden: No está autorizado para eliminar teléfonos.
+    "403 Forbidden": "No está autorizado para eliminar teléfonos."
 }
 ```
 
 #### MAIN: 
 
 
-##### METODO GET: 
+##### MÉTODO GET: 
 Endpoint: /main
 
 Respuesta: 
