@@ -10,6 +10,8 @@ La implementación se realiza usando Marshmallow para serialización y validaci�
 - **Flask**: Framework ligero para el desarrollo de aplicaciones web.
 - **Flask-SQLAlchemy**: ORM (Object Relational Mapper) que permite interactuar con la base de datos mediante objetos de Python en lugar de consultas SQL.
 - **Flask-Migrate**: Herramienta que facilita la gestión de migraciones de bases de datos con `Alembic`, permitiendo realizar cambios estructurales sin pérdida de datos.
+- **Flask-CORS**: Extensión que permite manejar solicitudes de diferentes orígenes (CORS).
+- **Flask-JWT-Extended**: Extensión que facilita la implementación de autenticación y autorización mediante JSON Web Tokens (JWT).
 - **HTML/CSS**: Utilizados para construir la interfaz de usuario, donde HTML define el contenido y CSS el estilo visual de la aplicación.
 
 
@@ -34,9 +36,4 @@ Crear una base de datos (con el entotno activado):
 Correr el programa:  
 `flask run`  
 `flask run --reload` // no hay que parar flask con cada modificacion que se hace  
-
-
-
-
-
 
