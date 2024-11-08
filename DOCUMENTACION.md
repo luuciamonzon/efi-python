@@ -1,4 +1,4 @@
-# DOCUMENTACIÓN DE ENDPOINTS: 
+## DOCUMENTACIÓN DE ENDPOINTS: 
 
 
 #### NOTA GENERAL:
@@ -9,6 +9,7 @@ Todos los endpoints requieren que el usuario esté autenticado y tenga permisos 
 
 ##### METODO POST / AUTENTICACIÓN
 Endpoint : /login
+
 Cuerpo de la solicitud: 
 ```json
     {
@@ -19,7 +20,7 @@ Cuerpo de la solicitud:
 Respuesta: 
 ```json
     {
-    `"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."`
+    "token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."
     }
 ```
 
@@ -39,10 +40,10 @@ Cuerpo de la solicitud:
 Respuesta:
 ```json 
 {
-  `"Mensaje": "Usuario creado correctamente",`
-  `"Usuario": {`
-    `"username": "usuario nuevo",`
-    `"is_admin": true`
+  "Mensaje": "Usuario creado correctamente",
+  "Usuario": {
+    "username": "usuario nuevo",
+    "is_admin": true
   }
 }
 ```
@@ -61,7 +62,7 @@ Endpoint : /users/ID del usuario a eliminar/delete
 Respuesta:
 ```json
 {
-  `200 OK`: Usuario eliminado correctamente.
+  200 OK: Usuario eliminado correctamente.
 }
 ```
 Mensajes en caso de errores: 
@@ -82,7 +83,7 @@ Cuerpo de la solicitud:
 Respuesta:
 ```json
 {
-  `200  OK`: Usuario actualizado correctamente.
+  200  OK: Usuario actualizado correctamente.
 }
 ```
 Mensajes en caso de errores: 
@@ -101,7 +102,7 @@ Endpoint : /marca
 Cuerpo de la solicitud: 
 ```json
     {
-    `"nombre":"Nombre de la marca a crear"`
+    "nombre":"Nombre de la marca a crear"
     }
 ```
 Respuesta:
@@ -161,7 +162,7 @@ Endpoint : /eliminar_stock
 Respuesta:
 ```json
 {
-  `200  OK`: Stock restado correctamente.
+  200  OK: Stock restado correctamente.
 }
 ```
 
@@ -204,45 +205,47 @@ Endpoint : /accesorios
 Cuerpo de la solicitud: 
 ```json
     {
-    `"nombre":"Nombre del accesorio a crear"`
+    "nombre":"Nombre del accesorio a crear"
     }
 ```
 Respuesta: 
 ```json
     {
-     ` 201 Created": Accesorio creado exitosamente`
+     201 Created: Accesorio creado exitosamente
     }
 ```
 Mensajes en caso de errores:
 ```json 
 {
-    `403 Forbidden`: No está autorizado para crear accesorio.
+    403 Forbidden: No está autorizado para crear accesorio.
 }
 ```
 Endpoint : /accesorio/ID del accesorio a eliminar/eliminar
+
 Respuesta: 
 ```json
 {
-  `200 OK`:Accesorio eliminado exitosamente.
+  200 OK:Accesorio eliminado exitosamente.
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    `403 Forbidden`: No está autorizado para eliminar accesorio.
+    403 Forbidden: No está autorizado para eliminar accesorio.
 }
 ```
 Endpoint : /accesorio/ID del accesorio a editar/editar
+
 Respuesta: 
 ```json
 {
-  `200 OK`:Accesorio actualizado exitosamente.
+  200 OK:Accesorio actualizado exitosamente.
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    `403 Forbidden`: No está autorizado para editar accesorio.
+    403 Forbidden: No está autorizado para editar accesorio.
 }
 ```
 
@@ -250,6 +253,7 @@ Mensajes en caso de errores:
 ##### METODO GET: 
 
 Endpoint : /accesorios
+
 Respuesta: 
 ```json
 {
@@ -274,10 +278,11 @@ Respuesta:
 
 ##### METODO POST: 
 Endpoint : /tipo
+
 Cuerpo de la solicitud: 
 ```json
     {
-    `"nombre":"tipo"`
+    "nombre":"tipo"
     }
 ```
 Respuesta: 
@@ -287,6 +292,7 @@ Respuesta:
 }
 ```
 Endpoint: /tipo/ID del tipo a eliminar/eliminar
+
 Respuesta: 
 ```json
 {
@@ -329,6 +335,7 @@ Respuesta:
 
 
 Endpoint: /telefono
+
 Cuerpo de la solicitud: 
 ```json
     {
@@ -343,7 +350,7 @@ Cuerpo de la solicitud:
 Respuesta: 
 ```json
 {
-   `200 OK`: Teléfono creado exitosamente.
+   200 OK: Teléfono creado exitosamente.
 }
 ```
 
@@ -351,13 +358,13 @@ Endpoint: /telefono/ID del telefono a eliminar/eliminar
 Respuesta:
 ```json
 {
-  `200 OK`: Teléfono eliminado con éxito.
+  200 OK: Teléfono eliminado con éxito.
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    `403 Forbidden`: No está autorizado para eliminar teléfonos.
+    403 Forbidden: No está autorizado para eliminar teléfonos.
 }
 ```
 
@@ -365,6 +372,7 @@ Mensajes en caso de errores:
 
 
 Endpoint: /telefono
+
 Respuesta: 
 ```json
 {
@@ -465,17 +473,18 @@ Respuesta:
 
 
 ##### METODO DELETE: 
-Endpoint: /telefono/ID del telefono a eliminar>
+Endpoint: /telefono/ID del telefono a eliminar
+
 Respuesta: 
 ```json
 {
-  `200 OK`: Teléfono eliminado con éxito.
+  200 OK: Teléfono eliminado con éxito.
 }
 ```
 Mensajes en caso de errores: 
 ```json
 {
-    `403 Forbidden`: No está autorizado para eliminar teléfonos.
+    403 Forbidden: No está autorizado para eliminar teléfonos.
 }
 ```
 
@@ -484,6 +493,7 @@ Mensajes en caso de errores:
 
 ##### METODO GET: 
 Endpoint: /main
+
 Respuesta: 
 ```json
 {
