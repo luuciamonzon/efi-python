@@ -22,7 +22,7 @@ Crear un entorno virtual:
 `source env/bin/activate`
 
 Instalar dependencias:
-`pip install -r requierements.txt`
+`pip install -r requirements.txt`
 
 Crear una base de datos (con el entotno activado):
 `sudo /opt/lampp/lampp start `
