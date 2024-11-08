@@ -49,8 +49,8 @@ Respuesta:
 }
 ```
 Mensajes de error:  
-    `403 Forbidden`: Solo los administradores pueden crear usuarios.
-    `500 Internal Server Error`: Fallo la creación del usuario.
+    `403 Forbidden`: Solo los administradores pueden crear usuarios.  
+    `500 Internal Server Error`: Fallo la creación del usuario.  
  
 
 ##### MÉTODO GET
@@ -68,9 +68,9 @@ Respuesta:
 }
 ```
 Mensajes en caso de errores:   
-    `403 Forbidden`: Solo el admin pueden crear usuarios.
-    `404 Not found`:Usuario no encontrado.
-    `500 Internal Server Error`: Fallo al eliminar el usuario.
+    `403 Forbidden`: Solo el admin pueden crear usuarios.  
+    `404 Not found`:Usuario no encontrado.  
+    `500 Internal Server Error`: Fallo al eliminar el usuario.  
 
 ##### MÉTODO PUT 
 
@@ -90,9 +90,9 @@ Respuesta:
 }
 ```
 Mensajes en caso de errores:   
-    `403 Forbidden`: No tienes permiso para actualizar usuarios.
-    `404 Not found`:Usuario no encontrado.
-    `500 Internal Server Error`: Error al actualizar el usuario.
+    `403 Forbidden`: No tienes permiso para actualizar usuarios.  
+    `404 Not found`:Usuario no encontrado.  
+    `500 Internal Server Error`: Error al actualizar el usuario.  
 
 
 #### MARCA: 
@@ -118,8 +118,8 @@ Respuesta:
     }
 ```
 Mensajes en caso de errores:   
-    `403 Forbidden`: No está autorizado para crear marcas.
-    `403 Forbidden`: No está autorizado para editar marca.
+    `403 Forbidden`: No está autorizado para crear marcas.  
+    `403 Forbidden`: No está autorizado para editar marca.  
  
 
 
@@ -173,11 +173,11 @@ Respuesta:
 ```
 
 Mensajes en caso de error:   
-    `400 Bad Request`: Debe proporcionar 'telefono_id' y 'cantidad'.
-    `400 Bad Request`: Cantidad debe ser un número entero.
-    `400 Bad Request`: Datos inválidos
-    `403 Forbidden`: No está autorizado para acceder a esta ruta.
-    `403 Forbidden`: No está autorizado para borrar stock.
+    `400 Bad Request`: Debe proporcionar 'telefono_id' y 'cantidad'.  
+    `400 Bad Request`: Cantidad debe ser un número entero.  
+    `400 Bad Request`: Datos inválidos  
+    `403 Forbidden`: No está autorizado para acceder a esta ruta.  
+    `403 Forbidden`: No está autorizado para borrar stock.  
     
 
 ##### MÉTODO GET: 
@@ -310,10 +310,9 @@ Respuesta:
 
 
 Mensaje en caso de error:   
-    `403 Forbidden`: No está autorizado para crear tipos.
-    `403 Forbidden`: No está autorizado para eliminar tipos.
-    `404 Not Found`: Tipo no encontrado.
- 
+    `403 Forbidden`: No está autorizado para crear tipos.  
+    `403 Forbidden`: No está autorizado para eliminar tipos.  
+    `404 Not Found`: Tipo no encontrado.  
 
 ##### MÉTODO GET: 
 Endpoint : /tipo
