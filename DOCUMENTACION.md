@@ -48,8 +48,7 @@ Respuesta:
   }
 }
 ```
-Mensajes de error:
-
+Mensajes de error:  
     `403 Forbidden`: Solo los administradores pueden crear usuarios.
     `500 Internal Server Error`: Fallo la creación del usuario.
  
@@ -68,7 +67,7 @@ Respuesta:
   "200 OK": "Usuario eliminado correctamente."
 }
 ```
-Mensajes en caso de errores: 
+Mensajes en caso de errores:   
     `403 Forbidden`: Solo el admin pueden crear usuarios.
     `404 Not found`:Usuario no encontrado.
     `500 Internal Server Error`: Fallo al eliminar el usuario.
@@ -90,7 +89,7 @@ Respuesta:
   "200  OK": "Usuario actualizado correctamente."
 }
 ```
-Mensajes en caso de errores: 
+Mensajes en caso de errores:   
     `403 Forbidden`: No tienes permiso para actualizar usuarios.
     `404 Not found`:Usuario no encontrado.
     `500 Internal Server Error`: Error al actualizar el usuario.
@@ -118,7 +117,7 @@ Respuesta:
       "nombre": "Samsumg"
     }
 ```
-Mensajes en caso de errores: 
+Mensajes en caso de errores:   
     `403 Forbidden`: No está autorizado para crear marcas.
     `403 Forbidden`: No está autorizado para editar marca.
  
@@ -173,7 +172,7 @@ Respuesta:
 }
 ```
 
-Mensajes en caso de error: 
+Mensajes en caso de error:   
     `400 Bad Request`: Debe proporcionar 'telefono_id' y 'cantidad'.
     `400 Bad Request`: Cantidad debe ser un número entero.
     `400 Bad Request`: Datos inválidos
@@ -310,7 +309,7 @@ Respuesta:
 ```
 
 
-Mensaje en caso de error: 
+Mensaje en caso de error:   
     `403 Forbidden`: No está autorizado para crear tipos.
     `403 Forbidden`: No está autorizado para eliminar tipos.
     `404 Not Found`: Tipo no encontrado.
