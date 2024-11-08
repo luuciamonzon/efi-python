@@ -49,8 +49,8 @@ Respuesta:
 }
 ```
 Mensajes de error:  
-    `403 Forbidden`: Solo los administradores pueden crear usuarios.  
-    `500 Internal Server Error`: Fallo la creación del usuario.  
+    `403 Forbidden`: Solo el admin puede crear nuevos usuarios.  
+    `500 Internal Server Error`: Fallo la creación del nuevo usuario.  
  
 
 ##### MÉTODO GET
@@ -68,7 +68,7 @@ Respuesta:
 }
 ```
 Mensajes de error:   
-    `403 Forbidden`: Solo el admin pueden crear usuarios.  
+    `403 Forbidden`: Solo el admin puede eliminar usuarios.  
     `404 Not found`:Usuario no encontrado.  
     `500 Internal Server Error`: Fallo al eliminar el usuario.  
 
@@ -309,10 +309,11 @@ Respuesta:
 ```
 
 
-Mensajes de error:   
-    `403 Forbidden`: No está autorizado para crear tipos.    
-    `403 Forbidden`: No está autorizado para eliminar tipos.    
-    `404 Not Found`: Tipo no encontrado.    
+Mensajes de error:     
+    `403 Forbidden`: No está autorizado para crear tipos.      
+    `403 Forbidden`: No está autorizado para eliminar tipos.      
+    `404 Not Found`: Tipo no encontrado.      
+
 
 ##### MÉTODO GET: 
 Endpoint : /tipo
