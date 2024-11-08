@@ -12,6 +12,9 @@ La implementación se realiza usando Marshmallow para serialización y validaci�
 - **Flask-Migrate**: Herramienta que facilita la gestión de migraciones de bases de datos con `Alembic`, permitiendo realizar cambios estructurales sin pérdida de datos.
 - **Flask-CORS**: Extensión que permite manejar solicitudes de diferentes orígenes (CORS).
 - **Flask-JWT-Extended**: Extensión que facilita la implementación de autenticación y autorización mediante JSON Web Tokens (JWT).
+- **Flask-Marshmallow**: Extensión utilizada para la serialización y validación de datos en la API.
+- **Werkzeug**: Biblioteca que proporciona especialmente utilidades para manejar datos sensibles de forma segura, como el hash de contraseñas.
+- **dotenv**: Permite cargar variables de entorno desde un archivo `.env` para configurar la aplicación de manera flexible, lo que ayuda a mantener las configuraciones sensibles (como contraseñas y URIs de bases de datos) fuera del código fuente haciendo el proyecto más seguro.
 - **HTML/CSS**: Utilizados para construir la interfaz de usuario, donde HTML define el contenido y CSS el estilo visual de la aplicación.
 
 
