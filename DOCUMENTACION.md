@@ -67,7 +67,7 @@ Respuesta:
   "200 OK": "Usuario eliminado correctamente."
 }
 ```
-Mensajes en caso de errores:   
+Mensajes de error:   
     `403 Forbidden`: Solo el admin pueden crear usuarios.  
     `404 Not found`:Usuario no encontrado.  
     `500 Internal Server Error`: Fallo al eliminar el usuario.  
@@ -89,7 +89,7 @@ Respuesta:
   "200  OK": "Usuario actualizado correctamente."
 }
 ```
-Mensajes en caso de errores:   
+Mensajes de error:   
     `403 Forbidden`: No tienes permiso para actualizar usuarios.  
     `404 Not found`:Usuario no encontrado.  
     `500 Internal Server Error`: Error al actualizar el usuario.  
@@ -117,7 +117,7 @@ Respuesta:
       "nombre": "Samsumg"
     }
 ```
-Mensajes en caso de errores:   
+Mensajes de error:   
     `403 Forbidden`: No está autorizado para crear marcas.  
     `403 Forbidden`: No está autorizado para editar marca.  
  
@@ -172,7 +172,7 @@ Respuesta:
 }
 ```
 
-Mensajes en caso de error:   
+Mensajes de error:   
     `400 Bad Request`: Debe proporcionar 'telefono_id' y 'cantidad'.  
     `400 Bad Request`: Cantidad debe ser un número entero.  
     `400 Bad Request`: Datos inválidos  
@@ -222,7 +222,7 @@ Respuesta:
      "201 Created": "Accesorio creado exitosamente"
     }
 ```
-Mensajes en caso de errores:
+Mensaje de error:
 ```json 
 {
     "403 Forbidden": "No está autorizado para crear accesorio."
@@ -236,7 +236,7 @@ Respuesta:
   "200 OK":"Accesorio eliminado exitosamente."
 }
 ```
-Mensajes en caso de errores: 
+Mensaje de error: 
 ```json
 {
     "403 Forbidden": "No está autorizado para eliminar accesorio."
@@ -250,7 +250,7 @@ Respuesta:
   "200 OK":"Accesorio actualizado exitosamente"
 }
 ```
-Mensajes en caso de errores: 
+Mensaje de error: 
 ```json
 {
     "403 Forbidden": "No está autorizado para editar accesorio"
@@ -309,10 +309,10 @@ Respuesta:
 ```
 
 
-Mensaje en caso de error:   
-    `403 Forbidden`: No está autorizado para crear tipos.  
-    `403 Forbidden`: No está autorizado para eliminar tipos.  
-    `404 Not Found`: Tipo no encontrado.  
+Mensajes de error:   
+    `403 Forbidden`: No está autorizado para crear tipos.    
+    `403 Forbidden`: No está autorizado para eliminar tipos.    
+    `404 Not Found`: Tipo no encontrado.    
 
 ##### MÉTODO GET: 
 Endpoint : /tipo
@@ -369,7 +369,7 @@ Respuesta:
   "200 OK": "Teléfono eliminado con éxito."
 }
 ```
-Mensajes en caso de errores: 
+Mensaje de error: 
 ```json
 {
     "403 Forbidden": "No está autorizado para eliminar teléfonos."
@@ -489,7 +489,7 @@ Respuesta:
   "200 OK": "Teléfono eliminado con éxito."
 }
 ```
-Mensajes en caso de errores: 
+Mensaje de error: 
 ```json
 {
     "403 Forbidden": "No está autorizado para eliminar teléfonos."
