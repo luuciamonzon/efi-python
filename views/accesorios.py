@@ -37,8 +37,8 @@ def accesorios():
             nombre = formulario.nombre.data
             accesorio_service = AccesorioService()
             accesorio_service.create(nombre)
-            return jsonify({"message": "Accesorio creado exitosamente"}), 201
-        return jsonify({"errors": formulario.errors}), 400
+            return jsonify({"Mensaje": "Accesorio creado exitosamente"}), 201
+        return jsonify({"Errors": formulario.errors}), 400
 
     accesorio_service = AccesorioService()
     accesorios = accesorio_service.get_all()
@@ -57,7 +57,7 @@ def accesorio_eliminar(id):
 
     accesorio_service = AccesorioService()
     accesorio_service.delete(id)
-    return jsonify({"message": "Accesorio eliminado exitosamente"}), 200
+    return jsonify({"Mensaje": "Accesorio eliminado exitosamente"}), 200
 
 
 @accesorio_app_bp.route("/accesorio/<id>/editar", methods=['GET', 'POST'])
@@ -73,17 +73,17 @@ def accesorio_editar(id):
     accesorio = accesorio_service.get_by_id(id)
     formulario = AccesorioForm(obj=accesorio)
 
-    if request.method == 'POST':
+    if request.method == 'PUT':
         if formulario.validate_on_submit():
             accesorio_service.update(id, formulario.nombre.data)
             updated_accesorio = accesorio_service.get_by_id(id)  
             return jsonify({
-                "message": "Accesorio actualizado exitosamente",
-                "accesorio": accesorio_to_dict(updated_accesorio)  
+                "Mensaje": "Accesorio actualizado exitosamente",
+                "Accesorio": accesorio_to_dict(updated_accesorio)  
             }), 200
         else:
             print(formulario.errors)  
-            return jsonify({"errors": formulario.errors}), 400
+            return jsonify({"Errors": formulario.errors}), 400
 
     accesorio_data = accesorio_to_dict(accesorio)
-    return jsonify({"accesorio": accesorio_data})
+    return jsonify({"Accesorio": accesorio_data})

@@ -18,21 +18,21 @@ Clonar el repositorio:
 `git clone git@github.com:luuciamonzon/efi-python.git`
 
 Crear un entorno virtual:
-python3 -m venv env
-source env/bin/activate  
+`python3 -m venv env`
+`source env/bin/activate`
 
 Instalar dependencias:
-pip install -r requierements.txt
+`pip install -r requierements.txt`
 
 Crear una base de datos (con el entotno activado):
-sudo /opt/lampp/lampp start 
-flask db init // Solo la primera vez para configurar las migraciones
-flask db migrate -m "Nombre de la migracion" // Genera el archivo de migración con los cambios detectados en los modelos
-flask db upgrade // Para subir los cambios a la base de datos
+`sudo /opt/lampp/lampp start `
+`flask db init `// Solo la primera vez para configurar las migraciones
+`flask db migrate -m "Nombre de la migracion"` // Genera el archivo de migración con los cambios detectados en los modelos
+`flask db upgrade` // Para subir los cambios a la base de datos
 
 Correr el programa:
-flask run 
-flask run --reload // no hay que parar flask con cada modificacion que se hace
+`flask run`
+`flask run --reload` // no hay que parar flask con cada modificacion que se hace
 
 
 

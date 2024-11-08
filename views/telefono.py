@@ -67,9 +67,9 @@ def telefonos():
             tipo = formulario.tipo.data
 
             telefono_service.create(modelo, anio_fabricacion, precio, marca, tipo)
-            return jsonify({"message": "Teléfono creado exitosamente"}), 201
+            return jsonify({"Mensaje": "Teléfono creado exitosamente"}), 201
         except Exception as e:
-            return jsonify({"error": f"Error al crear el teléfono: {str(e)}"}), 500
+            return jsonify({"Error": f"Error al crear el teléfono: {str(e)}"}), 500
 
     return jsonify({
         "telefonos": telefonos_serializados,
@@ -90,7 +90,7 @@ def telefono_eliminar(id):
 
     telefono_service = TelefonoService(TelefonoRepositories())
     telefono_service.delete_with_accesorios(id)
-    return jsonify({"message": "Teléfono eliminado con éxito"}), 200
+    return jsonify({"Mensaje": "Teléfono eliminado con éxito"}), 200
 
 
 @telefono_app_bp.route("/telefono/<id>", methods=['GET'])
@@ -123,8 +123,8 @@ def delete_telefono(telefono_id):
 
     try:
         delete_with_accesorios(telefono_id)
-        return jsonify({"message": "Teléfono eliminado con éxito"}), 200
+        return jsonify({"Mensaje": "Teléfono eliminado con éxito"}), 200
     except Exception as e:
         db.session.rollback()
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"Error": str(e)}), 500
     

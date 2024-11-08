@@ -10,18 +10,15 @@ Todos los endpoints requieren que el usuario esté autenticado y tenga permisos 
 # METODO POST / AUTENTICACIÓN
 Endpoint : /login
 Cuerpo de la solicitud: 
-`
     {
-    "username":"admin",
-    "password" "123"
+    `"username":"nombre",`
+    `"password":"contraseña"`
     }
-`
+
 Respuesta: 
-`
     {
-    "toker":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."
+    `"token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."`
     }
-`
 
 
 ## USERS: 
@@ -33,27 +30,24 @@ Endpoint : /users
 Cuerpo de la solicitud: 
 `
     {
-    "username":"luucia",
-    "password" "monzon1"
+    `"username":"luucia",`
+    `"password" "monzon1"`
     }
 `
 Respuesta: 
-`
 {
-  "Mensaje": "Usuario creado correctamente",
-  "Usuario": {
-  "username": "nuevo_usuario",
-  "is_admin": true
+  `"Mensaje": "Usuario creado correctamente",`
+  `"Usuario": {`
+    `"username": "usuario nuevo",`
+    `"is_admin": true`
   }
 }
-`
+
 Mensajes de error:
-`
  {
     `403 Forbidden`: Solo los administradores pueden crear usuarios.
     `500 Internal Server Error`: Fallo la creación del usuario.
  }
-`
 
 ## METODO GET
 
@@ -63,37 +57,36 @@ Si el usuario autenticado es administrador, se devuelve la lista completa con de
 
 Endpoint : /users/ID del usuario a eliminar/delete
 Respuesta:
-`
 {
-  "Mensaje": "Usuario eliminado correctamente"
+  `200 OK`: Usuario eliminado correctamente.
 }
-`
-Mensajes en caso de errores: 
-Si no es usuario admin: {"Mensaje": "Solo el admin puede eliminar usuarios"}), 403
-Si no encuentra al usuario: {"Mensaje": "Usuario no encontrado"}), 404
-Si no se pudo eliminar el usuario: {"Mensaje": "Fallo al eliminar el usuario", "Error": str(e)}), 500
 
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: Solo el admin pueden crear usuarios.
+    `404 Not found`:Usuario no encontrado.
+    `500 Internal Server Error`: Fallo al eliminar el usuario.
+ }
 
 ## METODO PUT 
 
 Endpoint : /users/ID del usuario a actualizar/update
 Cuerpo de la solicitud: 
-`
     {
-    "username":"dato a actualizar, si se desea",
-    "password" "dato a actualizar, si se desea"
+    `"username":"dato a actualizar, si se desea",`
+    `"password" "dato a actualizar, si se desea"`
     }
-`
 Respuesta:
-`
 {
-  "Mensaje": "Usuario actualizado correctamente", "Usuario": user.to_dict()}), 200
+  `200  OK`: Usuario actualizado correctamente.
 }
-`
+
 Mensajes en caso de errores: 
-Si no es usuario admin: {"Mensaje": "No tienes permiso para actualizar usuarios"}), 403
-Si no encuentra al usuario: {"Mensaje": "Usuario no encontrado"}), 404
-Si no se pudo actualizar el usuario: "Mensaje": "Error al actualizar el usuario: " + str(e)}), 500
+{
+    `403 Forbidden`: No tienes permiso para actualizar usuarios.
+    `404 Not found`:Usuario no encontrado.
+    `500 Internal Server Error`: Error al actualizar el usuario.
+ }
 
 
 ## MARCA: 
@@ -104,106 +97,162 @@ Si no se pudo actualizar el usuario: "Mensaje": "Error al actualizar el usuario:
 
 Endpoint : /marca
 Cuerpo de la solicitud: 
-`
     {
-    "nombre":"Nombre de la marca a crear"
+    `"nombre":"Nombre de la marca a crear"`
     }
-`
 Respuesta:
-`
-"marcas": 
+`"marcas":` 
     {
-      "id": 1,
-      "nombre": "Samsumg"
+     ` "id": 1,`
+      `"nombre": "Samsumg"`
     }
-`
+
 Mensajes en caso de errores: 
-Si no es usuario admin: {"Mensaje": "No está autorizado para crear marcas"}), 403, 
-"Mensaje": "No está autorizado para editar marca"}), 403
+{
+    `403 Forbidden`: No está autorizado para crear marcas.
+    `403 Forbidden`: No está autorizado para editar marca.
+ }
 
 
 ## METODO GET 
+
+
 Endpoint : /marca
 Respuesta: 
-`
 {
-  "marcas": [
+  `"marcas": [`
     {
-      "id": 1,
-      "nombre": "Samsumg"
+      `"id": 1,`
+      `"nombre": "Samsumg"`
     },
     {
-      "id": 2,
-      "nombre": "Apple"
+      `"id": 2,`
+      `"nombre": "Apple"`
     },
     {
-      "id": 3,
-      "nombre": "Motorola"
+      `"id": 3,`
+     ` "nombre": "Motorola"`
     },
     {
-      "id": 4,
-      "nombre": "Nokia"
+      `"id": 4,`
+      `"nombre": "Nokia"`
     },
     {
-      "id": 5,
-      "nombre": "BlackBerry"
+      `"id": 5,`
+     ` "nombre": "BlackBerry"`
     },
-    {
-      "id": 6,
-      "nombre": "Xiaomi"
-    },
-    {
-      "id": 7,
-      "nombre": "TCL"
-    },
-    {
-      "id": 8,
-      "nombre": "LG"
-    },
-    {
-      "id": 9,
-      "nombre": "Sony"
-    }
-  ]
+  `]`
 }
-`
 
 
 ## STOCK: 
 
 ## METODO POST: 
+
+
 Endpoint : /stock
 
 Endpoint : /eliminar_stock
 Respuesta:
 `
- return jsonify({"Mensaje": "Stock restado correctamente"}), 200
-`
-Mensajes en caso de error: 
-Si no es usuario admin: "Mensaje": "No está autorizado para acceder a esta ruta"}), 403; "Mensaje": "No está autorizado para borrar stock"}), 403
-Si faltan parámetros requeridos o si la cantidad no es un número entero: "Mensaje": "Debe proporcionar 'telefono_id' y 'cantidad'"}), 400; "Mensaje": "Cantidad debe ser un número entero"}), 400
-Si no se utilizan los datos correctos: {"Mensaje": "Datos inválidos"}), 400
+{
+  `200  OK`: Stock restado correctamente.
+}
 
+
+Mensajes en caso de error: 
+{
+    `400 Bad Request`: Debe proporcionar 'telefono_id' y 'cantidad'.
+    `400 Bad Request`: Cantidad debe ser un número entero.
+    `400 Bad Request`: Datos inválidos
+    `403 Forbidden`: No está autorizado para acceder a esta ruta.
+    `403 Forbidden`: No está autorizado para borrar stock.
+    
+ }
 
 ## METODO GET: 
+
 
 Endpoint : /stock
 Respuesta:
 [
-  {
-    "telefono": "Modelo del teléfono",
-    "stock": cantidad
-  },
-  ...
+{
+`"accesorios": [`
+    {
+      `"id": 1,`
+      `"nombre": "Cargador Samsung"`
+    },
+    {
+      `"id": 3,`
+      `"nombre": "Funda Apple original"`
+    },
+   ` ...`
+  ]
+}
 ]
 
 ## ACCESORIOS: 
 
 ## METODO POST: 
 
+Endpoint : /accesorios
+Cuerpo de la solicitud: 
+    {
+    `"nombre":"Nombre del accesorio a crear"`
+    }
+Respuesta: 
+    {
+     ` 201 Created": Accesorio creado exitosamente`
+    }
+
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: No está autorizado para crear accesorio.
+}
+
+Endpoint : /accesorio/ID del accesorio a eliminar/eliminar
+Respuesta: 
+{
+  `200 OK`:Accesorio eliminado exitosamente.
+}
+
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: No está autorizado para eliminar accesorio.
+}
+
+Endpoint : /accesorio/ID del accesorio a editar/editar
+Respuesta: 
+{
+  `200 OK`:Accesorio actualizado exitosamente.
+}
+
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: No está autorizado para editar accesorio.
+}
+
+
 
 ## METODO GET: 
 
+Endpoint : /accesorios
+Respuesta: 
+{
+  `200 OK`: [
+{
+`"accesorios": [`
+    {
+      `"id": 1,`
+      `"nombre": "Cargador Samsung"`
+    },
+    {
+      `"id": 3,`
+      `"nombre": "Funda Apple original"`
+    },
+   ` ...`
+  ]
+}
 
 
 ## TIPO: 
@@ -212,34 +261,45 @@ Respuesta:
 ## METODO POST: 
 Endpoint : /tipo
 Cuerpo de la solicitud: 
-`
     {
     "nombre":"tipo"
     }
-`
 Respuesta: 
-`
 {
-  jsonify({'Mensaje': 'Tipo creado exitosamente'}), 201
+  `200`: Tipo creado exitosamente.
 }
-`
 
 Endpoint: /tipo/ID del tipo a eliminar/eliminar
 Respuesta: 
-`
 {
-  jsonify({'Mensaje': 'Tipo eliminado exitosamente'}), 200
+   `200 OK`: Tipo creado exitosamente.
 }
-`
+
 Mensaje en caso de error: 
-Si no es usuario admin: "Mensaje": "No está autorizado para crear tipos"}), 403
-"Mensaje":"No está autorizado para eliminar tipos"}), 403
-Si no encuentra el tipo solicitado: jsonify({'error': 'Tipo no encontrado'}), 404
+{
+    `403 Forbidden`: No está autorizado para crear tipos.
+    `403 Forbidden`: No está autorizado para eliminar tipos.
+    `404 Not Found`: Tipo no encontrado.
+ }
 
 
 ## METODO GET: 
 Endpoint : /tipo
-Respuesta: Listado de tipos.
+Respuesta: 
+{
+   `200 OK`: {
+  `"tipos": [`
+    {
+      `"id": 1,`
+      `"nombre": "Gama alta"`
+    },
+    {
+      `"id": 3,`
+      `"nombre": "Gama baja"`
+    },
+    ...
+  ]
+}
 
 ## TELEFONO: 
 
@@ -247,12 +307,191 @@ Respuesta: Listado de tipos.
 ## METODO POST: 
 
 
+Endpoint: /telefono
+Cuerpo de la solicitud: 
+    {
+  "modelo": "Galaxy S20",
+  "anio_fabricacion":"2023",
+  "precio":"5000000",
+  "marca":1, // ID de la marca
+  "tipo":1, // ID del tipo
+  "accesorio":1 // ID del accesorio
+    }
+Respuesta: 
+{
+   `200 OK`: Teléfono creado exitosamente.
+}
+
+
+Endpoint: /telefono/ID del telefono a eliminar/eliminar
+Respuesta:
+{
+  `200 OK`: Teléfono eliminado con éxito.
+}
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: No está autorizado para eliminar teléfonos.
+}
+
+
 ## METODO GET: 
 
+
+Endpoint: /telefono
+Respuesta: 
+{
+   `201 OK`: {
+  "accesorios": [
+    [
+      1,
+      "Cargador Samsung"
+    ],
+    [
+      3,
+      "Funda Apple original"
+    ],
+    [
+      4,
+      "Cargador Apple"
+    ]
+  ],
+  "marcas": [
+    [
+      1,
+      "Samsumg"
+    ],
+    [
+      2,
+      "Apple"
+    ],
+    [
+      3,
+      "Motorola"
+    ],
+    [
+      4,
+      "Nokia"
+    ],
+    [
+      5,
+      "BlackBerry"
+    ],
+    [
+      6,
+      "Xiaomi"
+    ],
+    [
+      7,
+      "TCL"
+    ],
+    [
+      8,
+      "LG"
+    ],
+    [
+      9,
+      "Sony"
+    ],
+    [
+      10,
+      "ZTE"
+    ],
+    [
+      11,
+      "Oppo"
+    ],
+    [
+      12,
+      "Otra"
+    ]
+  ],
+  "telefonos": [
+    {
+      "anio_fabricacion": 2023,
+      "id": 1,
+      "marca": {
+        "id": 1,
+        "nombre": "Samsumg"
+      },
+      "modelo": "Galaxy S20",
+      "precio": 5000000,
+      "tipo": {
+        "id": 1,
+        "nombre": "Gama alta"
+      }
+    }
+  ],
+  "tipos": [
+    [
+      1,
+      "Gama alta"
+    ],
+    [
+      3,
+      "Gama baja"
+    ]
+  ]
+}
+}
+
+
+## METODO DELETE: 
+Endpoint: /telefono/ID del telefono a eliminar>
+Respuesta: 
+{
+  `200 OK`: Teléfono eliminado con éxito.
+}
+Mensajes en caso de errores: 
+{
+    `403 Forbidden`: No está autorizado para eliminar teléfonos.
+}
 
 ## MAIN: 
 
-## METODO POST: 
-
 
 ## METODO GET: 
+Endpoint: /main
+Respuesta: 
+{
+  `200 OK`: {
+  "telefonos": [
+    {
+      "id": 1,
+      "modelo": "Galaxy S22",
+      "anio_fabricacion": 2023,
+      "precio": 5000000,
+      "marca": "Samsung",
+      "tipo": "Gama alta",
+      "stock": [
+        {
+          "cantidad": 10
+        },
+        ...
+      ]
+    },
+    ...
+  ],
+  "accesorios": [
+    {
+      "id": 1,
+      "nombre": "Cargador Samsung"
+    },
+    ...
+  ],
+  "marcas": [
+    {
+      "id": 1,
+      "nombre": "Samsung"
+    },
+    ...
+  ],
+  "tipos": [
+    {
+      "id": 1,
+      "nombre": "Gama alta"
+    },
+    ...
+  ],
+  "total_stock_telefonos": 50
+}
+}
