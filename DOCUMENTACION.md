@@ -242,21 +242,29 @@ Mensaje de error:
     "403 Forbidden": "No está autorizado para eliminar accesorio."
 }
 ```
-Endpoint : /accesorio/ID del accesorio a editar/editar
 
-Respuesta: 
+##### MÉTODO PUT 
+
+Endpoint : /accesorio/ID del accesorio a actualizar/editar
+
+Cuerpo de la solicitud: 
+```json
+    {
+    "nombre":"accesorio a actualizar"
+    }
+```
+Respuesta:
 ```json
 {
-  "200 OK":"Accesorio actualizado exitosamente"
+  "200  OK": "Accesorio actualizado exitosamente."
 }
 ```
-Mensaje de error: 
+Mensajes de error:   
 ```json
 {
-    "403 Forbidden": "No está autorizado para editar accesorio"
+    "403 Forbidden": "No está autorizado para editar accesorio"  
 }
 ```
-
 
 ##### MÉTODO GET: 
 
