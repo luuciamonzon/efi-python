@@ -259,7 +259,7 @@ Respuesta:
   "200  OK": "Accesorio actualizado exitosamente."
 }
 ```
-Mensajes de error:   
+Mensaje de error:   
 ```json
 {
     "403 Forbidden": "No está autorizado para editar accesorio"  
