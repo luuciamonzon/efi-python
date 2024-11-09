@@ -60,7 +60,7 @@ def accesorio_eliminar(id):
     return jsonify({"Mensaje": "Accesorio eliminado exitosamente"}), 200
 
 
-@accesorio_app_bp.route("/accesorio/<id>/editar", methods=['GET', 'POST'])
+@accesorio_app_bp.route("/accesorio/<id>/editar", methods=['PUT'])
 @jwt_required()
 def accesorio_editar(id):
     additional_info = get_jwt()
